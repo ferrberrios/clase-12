@@ -129,13 +129,6 @@
                 },
             });
 
-// ── Cargar D3 dinámicamente (no interfiere con Chart.js) ──
-(function() {
-  var script = document.createElement("script");
-  script.src = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js";
-  script.onload = function() { initMapaDiseño(); };
-  document.head.appendChild(script);
-})();
 const regionData = [
   {
     name: "Arica y Parinacota", num: 15,
@@ -591,5 +584,11 @@ function initMapaDiseño(selector) {
     rankingEl.appendChild(row);
   });
 }
-
+// ── Cargar D3 dinámicamente (no interfiere con Chart.js) ──
+(function() {
+  var script = document.createElement("script");
+  script.src = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js";
+  script.onload = function() { initMapaDiseño("#mapa-diseno"); };
+  document.head.appendChild(script);
+})();
 
